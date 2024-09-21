@@ -40,8 +40,9 @@ $sql = mysqli_query($con, $query);
     <div class="filter">
         <div class="filter1">
     <form action="" method="post"> 
+    <label for="">Сортировка по выполненности:</label>
         <select id="taskFilter" name="taskFilter" class="form-select" onchange="this.form.submit()"> 
-            <option value="" <?= $filter === '' ? "selected": '' ?>>Все</option> 
+            <option value="" <?= $filter === '' ? "selected": '' ?>>Все </option> 
             <option value="1" <?= $filter === '1' ? "selected": '' ?>>Выполненные</option> 
             <option value="0" <?= $filter === '0' ? "selected": '' ?>>Не выполненные</option> 
         </select> 
@@ -49,6 +50,7 @@ $sql = mysqli_query($con, $query);
     </div>
     <div class="filter2">
     <form action="" method="post"> 
+    <label for="">Сортировка по дате:</label>
         <select id="Filter" name="dateFilter" class="form-select" onchange="this.form.submit()"> 
             <option value="" <?= $filter2 === '' ? "selected": '' ?>>Все</option> 
             <option value="1" <?= $filter2 === '1' ? "selected": '' ?>>Новые</option> 
@@ -69,16 +71,19 @@ $sql = mysqli_query($con, $query);
                     <form action="/database/edit-db.php?id=<?= $app["id"] ?>" method="POST">
                         <div id="checkbox-content"> 
                             <input type="checkbox" name="checkbox[]" id="checkbox-<?= $app["id"] ?>" value="<?= $app["id"] ?>" onChange="updateStatus(this)" <?= $app["is_completed"]=='1' ? "checked": ""?>> 
-                            <label for="checkbox">Заметка №<?= $app["id"] ?></label> 
+                            <!-- <label for="checkbox">Заметка №<?= $app["id"] ?></label>  -->
+                         <label for="checkbox">Заметка </label>  
                         </div> 
+                        <label for="recipient-name" class="col-form-label">Название заметки:</label> 
                         <input type="text" required class="form-control" name="title" value="<?= $app["title"] ?>" /> 
+                        <label for="recipient-name" class="col-form-label">Описание:</label> 
+
                         <input type="text" required class="form-control" name="description" value="<?= $app["description"] ?>" /> 
                       
                 </div> 
                 <div id="edit-and-delete">  
                 <button type="submit"><img src="img\Frame 6.svg" alt=""></button>
                 </form>
-                    <!-- <a href="/database/delete-task.php?id=<?= $app["id"] ?>"><img src="img/trash-svgrepo-com 1.svg" alt=""></a>   -->
                     <a href="#" class="delete-task" data-id="<?= $app["id"] ?>"><img src="img/trash-svgrepo-com 1.svg" alt=""></a>
 
                 </div>  

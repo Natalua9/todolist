@@ -63,12 +63,9 @@ body {
 
 #searh {
     background-image: url('img/poisc.svg');
-    /* Укажите путь к изображению */
     background-repeat: no-repeat;
     background-position: 10px center;
-    /* Позиция изображения */
     padding-left: 40px;
-    /* Отступ слева, чтобы текст не накладывался на изображение */
 }
 
 #containt {

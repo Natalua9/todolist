@@ -10,7 +10,7 @@ require_once "header.php";
   </div>
   <div class="mb-3">
     <label for="pass" class="form-label">пароль</label>
-    <input type="pass" name="pass" class="form-control" id="exampleInputPassword1">
+    <input type="password" name="pass" class="form-control" id="exampleInputPassword1">
   </div>
   <button type="submit" class="btn btn-primary" id="button">Зарегистрироватся</button>
 </form>
